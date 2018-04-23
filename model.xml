@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Abgabe_01">
+            <and abstract="true" name="Base">
+                <feature name="Rules"/>
+                <and name="Playboard">
+                    <and abstract="true" name="Playboard features">
+                        <and name="Playboard type">
+                            <and abstract="true" name="Expansion">
+                                <and abstract="true" name="Manual">
+                                    <feature name="Direction"/>
+                                </and>
+                                <feature name="Automatic"/>
+                            </and>
+                            <and abstract="true" name="Field shape">
+                                <feature name="Hexagonal"/>
+                            </and>
+                        </and>
+                        <and abstract="true" name="Playboard behaviour">
+                            <feature name="Custom Playboards"/>
+                        </and>
+                    </and>
+                    <and abstract="true" name="Life behaviour">
+                        <feature name="Overflow"/>
+                    </and>
+                </and>
+                <feature name="Play"/>
+            </and>
+            <and abstract="true" name="Playing">
+                <feature name="Pausing"/>
+                <feature name="Iterations"/>
+                <feature name="Speed"/>
+            </and>
+            <and abstract="true" name="Editing">
+                <and name="Insert Patterns">
+                    <feature name="From files"/>
+                    <and abstract="true" name="Predefined">
+                        <feature name="Still lifes"/>
+                        <feature name="Oscillators"/>
+                        <feature name="Spaceships"/>
+                        <feature name="Guns"/>
+                        <feature name="Puffers"/>
+                    </and>
+                </and>
+                <feature name="On-the-fly Editing"/>
+            </and>
+        </and>
+    </struct>
+    <constraints/>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>
