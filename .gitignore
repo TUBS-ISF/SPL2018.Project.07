@@ -22,8 +22,13 @@
 hs_err_pid*
 
 # IDEA
-/.idea
+.idea/
+*.iml
 
 # Eclipse
 .project
-/.featureide
+.featureide
+target/
+
+# Gradle
+.gradle/
