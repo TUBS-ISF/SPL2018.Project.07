@@ -1,8 +1,8 @@
 group = 'de.tu-bs'
 version = '0.0.4'
 
-ext {
-    spring_framework_version = '4.7.0'
-    spring_context_version = '4.2.6.RELEASE'
-    junit_version = '4.12'
+allprojects {
+    repositories {
+        mavenCentral()
+    }
 }

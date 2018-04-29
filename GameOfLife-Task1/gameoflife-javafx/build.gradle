@@ -1,9 +1,0 @@
-apply plugin: 'java'
-
-version = '0.0.4-SNAPSHOT'
-//artifact = 'gameoflife-javafx'
-
-dependencies {
-//    compile project(':tse.gameoflife:gameoflife-core')
-//    compile 'org.springframework.spring-context'
-}

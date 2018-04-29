@@ -32,4 +32,4 @@ target/
 .settings
 
 # Gradle
-.gradle/
+.gradle
