@@ -1,0 +1,15 @@
+include 'GameOfLife-Task1',
+        'GameOfLife-Task1:gameoflife-core',
+        'GameOfLife-Task1:gameoflife-javafx',
+        'GameOfLife-Task2',
+        'GameOfLife-Task2:gameoflife-core',
+        'GameOfLife-Task2:gameoflife-javafx',
+        'GameOfLife-Task3',
+        'GameOfLife-Task3:gameoflife-core',
+        'GameOfLife-Task3:gameoflife-javafx',
+        'GameOfLife-Task4',
+        'GameOfLife-Task4:gameoflife-core',
+        'GameOfLife-Task4:gameoflife-javafx',
+        'GameOfLife-Task5'
+        'GameOfLife-Task5:gameoflife-core'
+        'GameOfLife-Task5:gameoflife-javafx'
