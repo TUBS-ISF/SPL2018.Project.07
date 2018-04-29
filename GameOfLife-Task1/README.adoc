@@ -1,10 +1,16 @@
 = SPL2018.Project.07
 
-Basisprojekt aus Repository von Tino Steinort: https://github.com/tinosteinort/gameoflife
+== Task 1
 
-== READMEs
-* link:GameOfLife-Task1/README.adoc[Task 1]
-* link:GameOfLife-Task2/README.adoc[Task 2]
-* link:GameOfLife-Task3/README.adoc[Task 3]
-* link:GameOfLife-Task4/README.adoc[Task 4]
-* link:GameOfLife-Task5/README.adoc[Task 5]
+=== Konfigurationen
+* Konfiguration 1
+    ** Nur alle obligatorischen Features
+* Konfiguration 2
+    ** Alle Features außer `Automatic`, da exklusiv mit `Overflow`
+* Konfiguration 3
+    ** Alle Features außer `Overflow`, da exklusiv mit `Automatic`
+* Konfiguration 4
+    ** Alles ohne `Playboard features` und `Life behaviour`
+* Konfiguration 5
+    ** Alles ohne `Patterns` und entweder `Automatic`oder `Overflow`
+
