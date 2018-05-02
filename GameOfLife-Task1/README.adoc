@@ -3,14 +3,14 @@
 == Task 1
 
 === Konfigurationen
-* Konfiguration 1
+* link:configs/default.xml[Konfiguration 1]
     ** Nur alle obligatorischen Features
-* Konfiguration 2
+* link:configs/config2.xml[Konfiguration 2]
     ** Alle Features außer `Automatic`, da exklusiv mit `Overflow`
-* Konfiguration 3
+* link:configs/config3.xml[Konfiguration 3]
     ** Alle Features außer `Overflow`, da exklusiv mit `Automatic`
-* Konfiguration 4
+* link:configs/config4.xml[Konfiguration 4]
     ** Alles ohne `Playboard features` und `Life behaviour`
-* Konfiguration 5
+* link:configs/config5.xml[Konfiguration 5]
     ** Alles ohne `Patterns` und entweder `Automatic`oder `Overflow`
 
