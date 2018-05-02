@@ -12,5 +12,5 @@
 * link:configs/config4.xml[Konfiguration 4]
     ** Alles ohne `Playboard features` und `Life behaviour`
 * link:configs/config5.xml[Konfiguration 5]
-    ** Alles ohne `Patterns` und entweder `Automatic`oder `Overflow`
+    ** Alles ohne `Patterns` und entweder `Automatic` oder `Overflow`
 
