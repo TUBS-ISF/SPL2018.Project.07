@@ -29,8 +29,10 @@ hs_err_pid*
 # Eclipse
 .project
 .featureide
-target/
+target
 .settings
+.classpath
+bin
 
 # Gradle
 .gradle
