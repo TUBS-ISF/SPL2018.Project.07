@@ -16,3 +16,4 @@ Basisprojekt aus Repository von Tino Steinort: https://github.com/tinosteinort/g
 
 == Model
 image::img/model.png[]
+image::https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif[]
