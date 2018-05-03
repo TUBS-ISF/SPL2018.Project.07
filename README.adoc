@@ -14,6 +14,9 @@ Basisprojekt aus Repository von Tino Steinort: https://github.com/tinosteinort/g
     ** Alle Tasks werden damit importiert
 * Build: `gradlew build` im Root-Ordner
 
+== Example
+image::https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif[]
+
+
 == Model
 image::img/model.png[]
-image::https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif[]
