@@ -13,3 +13,6 @@ Basisprojekt aus Repository von Tino Steinort: https://github.com/tinosteinort/g
 * File > Import... > Gradle > Existing Gradle Project
     ** Alle Tasks werden damit importiert
 * Build: `gradlew build` im Root-Ordner
+
+== Model
+image::img/model.png[]
