@@ -36,4 +36,4 @@ These Parameters activate Fieldtypes in the "New Field"-Drop-Down Menu
 * Deklarierung der Board-Types musste aus den FXML-Dateien herausgezogen und programmatisch durchgeführt werden
 
 ==== Welche der 5 Konfigurationen verhalten sich identisch?
-* Alle Konfigurationen verhalten sich
+* Konfiguration 1 (Default) und 4 verhalten sich identisch (im dem Sinne, dass die runtime.properties in Hinsicht auf die implementierten Features gleich bleibt)

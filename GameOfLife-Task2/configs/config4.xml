@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
     <feature automatic="selected" name="Abgabe_02"/>
-    <feature manual="selected" name="Base"/>
+    <feature automatic="selected" manual="selected" name="Base"/>
     <feature automatic="selected" name="Rules"/>
     <feature automatic="selected" name="Playboard"/>
+    <feature manual="selected" name="Fixed Playboard"/>
     <feature automatic="selected" name="Play"/>
     <feature automatic="selected" manual="selected" name="Playing"/>
     <feature manual="selected" name="Pausing"/>

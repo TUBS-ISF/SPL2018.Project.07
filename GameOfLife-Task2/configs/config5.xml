@@ -17,6 +17,7 @@
     <feature manual="selected" name="Heatmap"/>
     <feature manual="selected" name="Life behaviour"/>
     <feature automatic="unselected" name="Overflow"/>
+    <feature manual="selected" name="Fixed Playboard"/>
     <feature automatic="selected" name="Play"/>
     <feature automatic="selected" manual="selected" name="Playing"/>
     <feature manual="selected" name="Pausing"/>

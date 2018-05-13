@@ -13,6 +13,8 @@ Basisprojekt aus Repository von Tino Steinort: https://github.com/tinosteinort/g
 * File > Import... > Gradle > Existing Gradle Project
     ** Alle Tasks werden damit importiert
 * Build: `gradlew build` im Root-Ordner
+* Das überschreibt ggf. die eingecheckten .project-Dateien, die zu FeatureIDE gehören
+    ** (Deswegen ist es eine schlechte Idee IDE-spezifische Dateien zu committen)...
 
 == Example
 image::https://upload.wikimedia.org/wikipedia/commons/e/e5/Gospers_glider_gun.gif[]

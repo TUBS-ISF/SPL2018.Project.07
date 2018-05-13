@@ -3,7 +3,7 @@
     <properties/>
     <struct>
         <and abstract="true" mandatory="true" name="Abgabe_02">
-            <and abstract="true" name="Base">
+            <and abstract="true" mandatory="true" name="Base">
                 <feature mandatory="true" name="Rules">
                     <description>
 Basic rules implenation of the game of life
@@ -145,6 +145,15 @@ Choose an area of the field and save that to a file
                     <var>Overflow</var>
                 </not>
             </imp>
+        </rule>
+        <rule>
+            <disj>
+                <var>Fixed Playboard</var>
+                <disj>
+                    <var>Automatic</var>
+                    <var>Overflow</var>
+                </disj>
+            </disj>
         </rule>
     </constraints>
     <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
