@@ -25,14 +25,16 @@ hs_err_pid*
 .idea/
 *.iml
 !/gradle/wrapper/gradle-wrapper.jar
+out/
 
 # Eclipse
 .project
 .featureide
-target
+target/
 .settings
 .classpath
-bin
+bin/
 
 # Gradle
 .gradle
+build/

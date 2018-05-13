@@ -1,0 +1,10 @@
+= SPL2018.Project.07
+
+== Task 2
+
+=== Parameter
+These Parameters activate Fieldtypes in the new Field Drop-Down Menu
+
+* `fixedField`: Feature "
+* `torusField`: Feature "
+* `endlessField`: Feature "

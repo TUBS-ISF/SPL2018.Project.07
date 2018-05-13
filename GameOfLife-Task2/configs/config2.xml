@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="Abgabe_01"/>
+    <feature automatic="selected" manual="selected" name="Base"/>
+    <feature automatic="selected" name="Rules"/>
+    <feature automatic="selected" name="Playboard"/>
+    <feature automatic="selected" manual="selected" name="Playboard features"/>
+    <feature automatic="selected" manual="selected" name="Playboard type"/>
+    <feature automatic="selected" manual="selected" name="Expansion"/>
+    <feature automatic="selected" manual="selected" name="Manual"/>
+    <feature manual="selected" name="Direction"/>
+    <feature automatic="unselected" name="Automatic"/>
+    <feature automatic="selected" manual="selected" name="Field shape"/>
+    <feature manual="selected" name="Hexagonal"/>
+    <feature automatic="selected" manual="selected" name="Playboard behaviour"/>
+    <feature manual="selected" name="Custom Playboards"/>
+    <feature manual="selected" name="Heatmap"/>
+    <feature automatic="selected" name="Life behaviour"/>
+    <feature manual="selected" name="Overflow"/>
+    <feature automatic="selected" name="Play"/>
+    <feature automatic="selected" manual="selected" name="Playing"/>
+    <feature manual="selected" name="Pausing"/>
+    <feature manual="selected" name="Iterations"/>
+    <feature manual="selected" name="Speed"/>
+    <feature automatic="selected" manual="selected" name="Editing"/>
+    <feature manual="selected" name="On-the-fly Editing"/>
+    <feature automatic="selected" name="Draw Cells"/>
+    <feature automatic="selected" manual="selected" name="Patterns"/>
+    <feature automatic="selected" manual="selected" name="Insert Patterns"/>
+    <feature automatic="selected" manual="selected" name="Predefined"/>
+    <feature manual="selected" name="Still lifes"/>
+    <feature manual="selected" name="Oscillators"/>
+    <feature manual="selected" name="Spaceships"/>
+    <feature manual="selected" name="Guns"/>
+    <feature manual="selected" name="Puffers"/>
+    <feature manual="selected" name="From files"/>
+    <feature manual="selected" name="Save Patterns"/>
+</configuration>
