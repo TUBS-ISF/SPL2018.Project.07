@@ -1,10 +1,39 @@
 = SPL2018.Project.07
 
+
 == Task 2
 
 === Parameter
-These Parameters activate Fieldtypes in the new Field Drop-Down Menu
 
-* `fixedField`: Feature "
-* `torusField`: Feature "
-* `endlessField`: Feature "
+==== Propagation
+Parameters will be propagated by `GameOfLifeApplication` to the JavaFX-Controller `GameOfLifeController` with its `setParameters` method.
+
+==== Run Configuration
+These Parameters activate Fieldtypes in the "New Field"-Drop-Down Menu
+
+* `fixedField`: Feature "Fixed Playboard"
+* `torusField`: Feature "Overflow"
+* `endlessField`: Feature "Expansion>Automatic"
+* `heatmap`: Feature "Heatmap"
+
+
+=== Erfahrungen
+
+==== Welche Fehler wurden beim Testen gefunden?
+* Keine Fehler wurden gefunden
+* Alle Konfigurationen verhalten sich normal
+
+==== Wie sind Sie beim Programmieren vorgegangen?
+* Deklarierung der Board-Types aus den FXML-Dateien herausgezogen
+* Deklarierung der Board-Types programmatisch im Controller durchgeführt
+* Propagierung der Parameter an den Controller implementiert
+* Prüfung der Parameter im Controller und dementsprechende aktivierung der Features implementiert
+
+==== Haben Sie die Parameter nach einander entwickelt?
+* Nein
+
+==== Welche Änderungen mussten Sie vornehmen?
+* Deklarierung der Board-Types musste aus den FXML-Dateien herausgezogen und programmatisch durchgeführt werden
+
+==== Welche der 5 Konfigurationen verhalten sich identisch?
+* Alle Konfigurationen verhalten sich

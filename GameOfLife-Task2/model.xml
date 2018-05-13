@@ -2,7 +2,7 @@
 <featureModel>
     <properties/>
     <struct>
-        <and abstract="true" mandatory="true" name="Abgabe_01">
+        <and abstract="true" mandatory="true" name="Abgabe_02">
             <and abstract="true" name="Base">
                 <feature mandatory="true" name="Rules">
                     <description>
@@ -40,7 +40,7 @@ Hexagonal cells
                         <and abstract="true" name="Playboard behaviour">
                             <feature name="Custom Playboards">
                                 <description>
-Ability to deactivate single cells to build custom playboards
+Ability to deactivate single cells to build custom playboards, for example walls in the playboard
 </description>
                             </feature>
                             <feature name="Heatmap">
@@ -57,6 +57,7 @@ When cells move out of bounds, they are moved to the other side of the field
 </description>
                         </feature>
                     </and>
+                    <feature name="Fixed Playboard"/>
                 </and>
                 <feature mandatory="true" name="Play">
                     <description>

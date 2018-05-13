@@ -28,7 +28,7 @@ hs_err_pid*
 out/
 
 # Eclipse
-.project
+#.project Extrem Bad-Practice...
 .featureide
 target/
 .settings

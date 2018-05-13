@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <configuration>
-    <feature automatic="selected" name="Abgabe_01"/>
+    <feature automatic="selected" name="Abgabe_02"/>
     <feature automatic="selected" name="Base"/>
     <feature manual="selected" name="Rules"/>
     <feature automatic="selected" name="Playboard"/>

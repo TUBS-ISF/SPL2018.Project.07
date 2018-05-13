@@ -94,6 +94,7 @@ public class GameOfLifeGuiController implements Initializable {
     private DialogSupport dialogSupport = new DialogSupport();
     private List<String> parameters;
     private boolean dragBool;
+    private boolean heatmapFlag;
 
     private void initContextMenu() {
         final List<ResourceFigure> resourceFigures = resourceLoaderService.loadBuildInFigures();
@@ -109,6 +110,9 @@ public class GameOfLifeGuiController implements Initializable {
                 }
             });
         }
+
+        // Heatmap
+        this.heatmapFlag = parameters.contains("heatmap");
 
         // Fields
         ObservableList<MenuItem> fields = newBtn.getItems();
@@ -234,10 +238,16 @@ public class GameOfLifeGuiController implements Initializable {
 
 
     public void paint() {
-
         final GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        gc.setFill(Color.GRAY);
+        Color col;
+        if (!heatmapFlag) {
+            col = Color.WHITE;
+        } else {
+            col = Color.WHITE.deriveColor(0, 0, 100, 0.1);
+        }
+
+        gc.setFill(col);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());
 
         if (painterIsAvailable()) {
@@ -246,7 +256,7 @@ public class GameOfLifeGuiController implements Initializable {
     }
 
     private BoardPainter createAndBindPainter(final Board board) {
-        boardPainter = new BoardPainterFactory().build(board, canvas.getWidth(), canvas.getHeight());
+        boardPainter = new BoardPainterFactory().build(board, canvas.getWidth(), canvas.getHeight(), heatmapFlag);
         boardPainter.setViewPortX(0);
         boardPainter.setViewPortY(0);
         boardPainter.viewPortWidthProperty().bind(canvas.widthProperty());

@@ -34,7 +34,7 @@ public class DirectionDialogGuiController implements Initializable {
 
     private void initBoard() {
         board = new EndlessBoard();
-        boardPainter = new BoardPainterFactory().build(board, canvas.getWidth(), canvas.getHeight());
+        boardPainter = new BoardPainterFactory().build(board, canvas.getWidth(), canvas.getHeight(), false);
         boardPainter.setViewPortX(0);
         boardPainter.setViewPortY(0);
         boardPainter.viewPortWidthProperty().bind(canvas.widthProperty());

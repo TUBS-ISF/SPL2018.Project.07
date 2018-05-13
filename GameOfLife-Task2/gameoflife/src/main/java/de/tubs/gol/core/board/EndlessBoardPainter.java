@@ -23,10 +23,12 @@ public class EndlessBoardPainter implements BoardPainter {
     private Color cellColor = Color.BLACK;
 
     private final ViewPort viewPort;
+    private boolean heatmapFlag;
 
-    public EndlessBoardPainter(final EndlessBoard board, final double canvasWidth, final double canvasHeight) {
+    public EndlessBoardPainter(final EndlessBoard board, final double canvasWidth, final double canvasHeight, boolean heatmapFlag) {
         this.board = board;
         this.viewPort = new ViewPort(canvasWidth, canvasHeight);
+        this.heatmapFlag = heatmapFlag;
     }
 
     @Override
@@ -57,7 +59,7 @@ public class EndlessBoardPainter implements BoardPainter {
         gc.setFill(cellColor);
         for (Cell cell : board.getLivingCells()) {
 
-            if (viewPort.cellIsInViewPort(cell)) {
+//            if (viewPort.cellIsInViewPort(cell)) {
 
                 final int cellXInViewPort = cell.getX() - viewPort.getViewPortX();
                 final int cellYInViewPort = cell.getY() - viewPort.getViewPortY();
@@ -66,7 +68,7 @@ public class EndlessBoardPainter implements BoardPainter {
                 final double yPos = cellYInViewPort * cellWidth;
 
                 gc.fillRect(xPos, yPos, cellWidth, cellWidth);
-            }
+//            }
         }
     }
 

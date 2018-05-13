@@ -5,6 +5,7 @@ import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.geometry.Point2D;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 
 import java.util.Optional;
@@ -23,11 +24,15 @@ public class BoundedBoardPainter implements BoardPainter {
     private Color gridLineColor = Color.LIGHTGRAY;
     private Color cellColor = Color.BLACK;
 
-    private final ViewPort viewPort;
+    private Color currentColor;
 
-    public BoundedBoardPainter(final BoundedBoard board, final double canvasWidth, final double canvasHeight) {
+    private final ViewPort viewPort;
+    private boolean heatmapFlag;
+
+    public BoundedBoardPainter(final BoundedBoard board, final double canvasWidth, final double canvasHeight, boolean heatmapFlag) {
         this.board = board;
         this.viewPort = new ViewPort(canvasWidth, canvasHeight);
+        this.heatmapFlag = heatmapFlag;
     }
 
     public double boardWidthInPixel() {
@@ -44,9 +49,9 @@ public class BoundedBoardPainter implements BoardPainter {
         final double boardHeight = boardHeightInPixel();
         final double cellWidth = viewPort.cellWidthPropertyProperty().doubleValue();
 
-        // Fill Background
-        gc.setFill(backgroundColor);
-        gc.fillRect(0, 0, boardWidth, boardHeight);
+//        // Fill Background
+//        gc.setFill(boardBackgroundColor);
+//        gc.fillRect(0, 0, boardWidth, boardHeight);
 
         final double viewPortX = viewPort.viewPortXinPixel();
         final double viewPortY = viewPort.viewPortYinPixel();
@@ -101,6 +106,8 @@ public class BoundedBoardPainter implements BoardPainter {
         }
 
         // Paint Background of the Grid
+        Color boardBackgroundColor = this.boardBackgroundColor.deriveColor(0, 0, 100, 0.2);
+        System.out.println("paint " + boardBackgroundColor);
         gc.setFill(boardBackgroundColor);
         gc.fillRect(leftX, topY, rightX - leftX, bottomY - topY);
 
@@ -118,6 +125,7 @@ public class BoundedBoardPainter implements BoardPainter {
         // Paint the Cells
         gc.setStroke(cellColor);
         gc.setFill(cellColor);
+
         for (Cell cell : board.getLivingCells()) {
 
             if (viewPort.cellIsInViewPort(cell)) {
