@@ -17,7 +17,7 @@ Basic playboard behaviour
                         <and abstract="true" name="Playboard type">
                             <and abstract="true" name="Expansion">
                                 <and abstract="true" name="Manual">
-                                    <feature name="Direction">
+                                    <feature abstract="true" name="Direction">
                                         <description>
 Ability to manually change the fields dimensions
 </description>
@@ -30,7 +30,7 @@ Automatically expands field, when cells travel outside bounds
                                 </feature>
                             </and>
                             <and abstract="true" name="Field shape">
-                                <feature name="Hexagonal">
+                                <feature abstract="true" name="Hexagonal">
                                     <description>
 Hexagonal cells
 </description>
@@ -38,7 +38,7 @@ Hexagonal cells
                             </and>
                         </and>
                         <and abstract="true" name="Playboard behaviour">
-                            <feature name="Custom Playboards">
+                            <feature abstract="true" name="Custom Playboards">
                                 <description>
 Ability to deactivate single cells to build custom playboards, for example walls in the playboard
 </description>
@@ -71,7 +71,7 @@ Ability to Play/Start the game and have it run indefinitely
 Ability to pause and continue the game
 </description>
                 </feature>
-                <feature name="Iterations">
+                <feature abstract="true" name="Iterations">
                     <description>
 Choose how many iterations to skip forward to
 </description>
@@ -128,7 +128,7 @@ Load patterns from files
 </description>
                         </feature>
                     </and>
-                    <feature name="Save Patterns">
+                    <feature abstract="true" name="Save Patterns">
                         <description>
 Choose an area of the field and save that to a file
 </description>
