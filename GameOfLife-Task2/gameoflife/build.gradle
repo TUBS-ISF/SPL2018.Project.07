@@ -1,19 +1,18 @@
 apply plugin: 'java'
 
-version = '0.0.4-SNAPSHOT'
 
-dependencies {
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0-RC1'
+version = '0.0.4-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.tubs.gol.GameOfLifeApplication'
+    }
 }
 
-//<groupId>junit</groupId>
-//                <artifactId>junit</artifactId>
-//<version>${version.junit}</version>
-//                <scope>test</scope>
-//</dependency>
-//            <dependency>
-//                <groupId>org.springframework</groupId>
-//<artifactId>spring-context</artifactId>
-//                <version>${version.spring-context}</version>
-//</dependency>
-//        </dependencies>
+
+dependencies {
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0'
+}
