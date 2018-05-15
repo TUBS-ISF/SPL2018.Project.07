@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="Abgabe_02"/>
+    <feature automatic="selected" manual="selected" name="Base"/>
+    <feature automatic="selected" name="Rules"/>
+    <feature automatic="selected" name="Playboard"/>
+    <feature manual="selected" name="Fixed Playboard"/>
+    <feature automatic="selected" name="Play"/>
+    <feature automatic="selected" manual="selected" name="Playing"/>
+    <feature manual="selected" name="Pausing"/>
+    <feature manual="selected" name="Iterations"/>
+    <feature manual="selected" name="Speed"/>
+    <feature automatic="selected" manual="selected" name="Editing"/>
+    <feature manual="selected" name="On-the-fly Editing"/>
+    <feature automatic="selected" name="Draw Cells"/>
+    <feature automatic="selected" manual="selected" name="Patterns"/>
+    <feature automatic="selected" manual="selected" name="Insert Patterns"/>
+    <feature automatic="selected" manual="selected" name="Predefined"/>
+    <feature manual="selected" name="Still lifes"/>
+    <feature manual="selected" name="Oscillators"/>
+    <feature manual="selected" name="Spaceships"/>
+    <feature manual="selected" name="Guns"/>
+    <feature manual="selected" name="Puffers"/>
+    <feature manual="selected" name="From files"/>
+    <feature manual="selected" name="Save Patterns"/>
+</configuration>
