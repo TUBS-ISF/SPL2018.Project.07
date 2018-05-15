@@ -107,7 +107,6 @@ public class BoundedBoardPainter implements BoardPainter {
 
         // Paint Background of the Grid
         Color boardBackgroundColor = this.boardBackgroundColor.deriveColor(0, 0, 100, 0.2);
-        System.out.println("paint " + boardBackgroundColor);
         gc.setFill(boardBackgroundColor);
         gc.fillRect(leftX, topY, rightX - leftX, bottomY - topY);
 
