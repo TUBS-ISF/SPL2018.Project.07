@@ -13,8 +13,8 @@ Basic rules implenation of the game of life
                     <description>
 Basic playboard behaviour
 </description>
-                    <and abstract="true" name="Playboard features">
-                        <and abstract="true" name="Playboard type">
+                    <and abstract="true" name="PlayboardFeatures">
+                        <and abstract="true" name="PlayboardType">
                             <and abstract="true" name="Expansion">
                                 <and abstract="true" name="Manual">
                                     <feature abstract="true" name="Direction">
@@ -29,7 +29,7 @@ Automatically expands field, when cells travel outside bounds
 </description>
                                 </feature>
                             </and>
-                            <and abstract="true" name="Field shape">
+                            <and abstract="true" name="FieldShape">
                                 <feature abstract="true" name="Hexagonal">
                                     <description>
 Hexagonal cells
@@ -37,8 +37,8 @@ Hexagonal cells
                                 </feature>
                             </and>
                         </and>
-                        <and abstract="true" name="Playboard behaviour">
-                            <feature abstract="true" name="Custom Playboards">
+                        <and abstract="true" name="PlayboardBehaviour">
+                            <feature abstract="true" name="CustomPlayboards">
                                 <description>
 Ability to deactivate single cells to build custom playboards, for example walls in the playboard
 </description>
@@ -50,14 +50,14 @@ Shows historic status of cells as heatmap (afterglow)
                             </feature>
                         </and>
                     </and>
-                    <and abstract="true" name="Life behaviour">
+                    <and abstract="true" name="LifeBehaviour">
                         <feature name="Overflow">
                             <description>
 When cells move out of bounds, they are moved to the other side of the field
 </description>
                         </feature>
                     </and>
-                    <feature name="Fixed Playboard"/>
+                    <feature name="FixedPlayboard"/>
                 </and>
                 <feature mandatory="true" name="Play">
                     <description>
@@ -83,20 +83,20 @@ Variable speed for the simulation
                 </feature>
             </and>
             <and abstract="true" name="Editing">
-                <feature name="On-the-fly Editing">
+                <feature name="OnTheFlyEditing">
                     <description>
 Edit cells during runtime
 </description>
                 </feature>
-                <feature mandatory="true" name="Draw Cells">
+                <feature mandatory="true" name="DrawCells">
                     <description>
 Toggle cells on and off with the mouse
 </description>
                 </feature>
                 <and abstract="true" name="Patterns">
-                    <and abstract="true" name="Insert Patterns">
+                    <and abstract="true" name="InsertPatterns">
                         <or abstract="true" name="Predefined">
-                            <feature name="Still lifes">
+                            <feature name="StillLifes">
                                 <description>
 Category of patterns that can live indefinitely by its own, but does not move
 </description>
@@ -122,13 +122,13 @@ Category of patterns that leave behind debris as they move
 </description>
                             </feature>
                         </or>
-                        <feature name="From files">
+                        <feature name="FromFiles">
                             <description>
 Load patterns from files
 </description>
                         </feature>
                     </and>
-                    <feature abstract="true" name="Save Patterns">
+                    <feature abstract="true" name="SavePatterns">
                         <description>
 Choose an area of the field and save that to a file
 </description>
