@@ -2,7 +2,7 @@
 <featureModel>
     <properties/>
     <struct>
-        <and abstract="true" mandatory="true" name="Abgabe_02">
+        <and abstract="true" mandatory="true" name="Abgabe_03">
             <and abstract="true" mandatory="true" name="Base">
                 <feature mandatory="true" name="Rules">
                     <description>
