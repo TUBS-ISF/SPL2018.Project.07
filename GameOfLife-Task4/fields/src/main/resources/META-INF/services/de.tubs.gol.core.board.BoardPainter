@@ -1,0 +1,3 @@
+de.tubs.gol.core.board.endless.EndlessBoardPainter
+de.tubs.gol.core.board.fixed.FixedBoardPainter
+de.tubs.gol.core.board.torus.TorusBoardPainter

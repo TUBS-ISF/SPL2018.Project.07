@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+    <properties/>
+    <struct>
+        <and abstract="true" mandatory="true" name="Abgabe_04">
+            <and abstract="true" mandatory="true" name="Base">
+                <feature mandatory="true" name="Rules">
+                    <description>
+Basic rules implenation of the game of life
+</description>
+                </feature>
+                <and mandatory="true" name="Playboard">
+                    <description>
+Basic playboard behaviour
+</description>
+                    <and abstract="true" name="PlayboardFeatures">
+                        <and abstract="true" name="PlayboardType">
+                            <and abstract="true" name="Expansion">
+                                <and abstract="true" name="Manual">
+                                    <feature abstract="true" name="Direction">
+                                        <description>
+Ability to manually change the fields dimensions
+</description>
+                                    </feature>
+                                </and>
+                                <feature name="Automatic">
+                                    <description>
+Automatically expands field, when cells travel outside bounds
+</description>
+                                </feature>
+                            </and>
+                            <and abstract="true" name="FieldShape">
+                                <feature abstract="true" name="Hexagonal">
+                                    <description>
+Hexagonal cells
+</description>
+                                </feature>
+                            </and>
+                        </and>
+                        <and abstract="true" name="PlayboardBehaviour">
+                            <feature abstract="true" name="CustomPlayboards">
+                                <description>
+Ability to deactivate single cells to build custom playboards, for example walls in the playboard
+</description>
+                            </feature>
+                            <feature name="Heatmap">
+                                <description>
+Shows historic status of cells as heatmap (afterglow)
+</description>
+                            </feature>
+                        </and>
+                    </and>
+                    <and abstract="true" name="LifeBehaviour">
+                        <feature name="Overflow">
+                            <description>
+When cells move out of bounds, they are moved to the other side of the field
+</description>
+                        </feature>
+                    </and>
+                    <feature name="FixedPlayboard"/>
+                </and>
+                <feature mandatory="true" name="Play">
+                    <description>
+Ability to Play/Start the game and have it run indefinitely
+</description>
+                </feature>
+            </and>
+            <and abstract="true" name="Playing">
+                <feature name="Pausing">
+                    <description>
+Ability to pause and continue the game
+</description>
+                </feature>
+                <feature abstract="true" name="Iterations">
+                    <description>
+Choose how many iterations to skip forward to
+</description>
+                </feature>
+                <feature name="Speed">
+                    <description>
+Variable speed for the simulation
+</description>
+                </feature>
+            </and>
+            <and abstract="true" name="Editing">
+                <feature name="OnTheFlyEditing">
+                    <description>
+Edit cells during runtime
+</description>
+                </feature>
+                <feature mandatory="true" name="DrawCells">
+                    <description>
+Toggle cells on and off with the mouse
+</description>
+                </feature>
+                <and abstract="true" name="Patterns">
+                    <and abstract="true" name="InsertPatterns">
+                        <or abstract="true" name="Predefined">
+                            <feature name="StillLifes">
+                                <description>
+Category of patterns that can live indefinitely by its own, but does not move
+</description>
+                            </feature>
+                            <feature name="Oscillators">
+                                <description>
+Category of patterns that an life indefinitely by its own and pulsates
+</description>
+                            </feature>
+                            <feature name="Spaceships">
+                                <description>
+Category of patterns that can move
+</description>
+                            </feature>
+                            <feature name="Guns">
+                                <description>
+Category of patterns that create projectiles
+</description>
+                            </feature>
+                            <feature name="Puffers">
+                                <description>
+Category of patterns that leave behind debris as they move
+</description>
+                            </feature>
+                        </or>
+                        <feature name="FromFiles">
+                            <description>
+Load patterns from files
+</description>
+                        </feature>
+                    </and>
+                    <feature abstract="true" name="SavePatterns">
+                        <description>
+Choose an area of the field and save that to a file
+</description>
+                    </feature>
+                </and>
+            </and>
+        </and>
+    </struct>
+    <constraints>
+        <rule>
+            <imp>
+                <var>Automatic</var>
+                <not>
+                    <var>Overflow</var>
+                </not>
+            </imp>
+        </rule>
+        <rule>
+            <disj>
+                <var>Fixed Playboard</var>
+                <disj>
+                    <var>Automatic</var>
+                    <var>Overflow</var>
+                </disj>
+            </disj>
+        </rule>
+    </constraints>
+    <calculations Auto="true" Constraints="true" Features="true" Redundant="true" Tautology="true"/>
+    <comments/>
+    <featureOrder userDefined="false"/>
+</featureModel>

@@ -4,7 +4,9 @@ include 'GameOfLife-Task1',
         'GameOfLife-Task2:gameoflife',
         'GameOfLife-Task3',
         'GameOfLife-Task3:gameoflife',
-        'GameOfLife-Task4',
-        'GameOfLife-Task4:gameoflife',
+        'GameOfLife-Task4:api',
+        'GameOfLife-Task4:fields',
+        'GameOfLife-Task4:behaviour',
+        'GameOfLife-Task4:figures',
         'GameOfLife-Task5'
         'GameOfLife-Task5:gameoflife'

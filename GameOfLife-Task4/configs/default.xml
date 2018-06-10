@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="Abgabe_04"/>
+    <feature automatic="selected" name="Base"/>
+    <feature automatic="selected" manual="selected" name="Rules"/>
+    <feature automatic="selected" name="Playboard"/>
+    <feature manual="selected" name="FixedPlayboard"/>
+    <feature automatic="selected" name="Play"/>
+</configuration>

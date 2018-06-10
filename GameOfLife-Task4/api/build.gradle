@@ -1,0 +1,11 @@
+jar {
+    manifest {
+        attributes 'Main-Class': 'de.tubs.gol.GameOfLifeApplication'
+    }
+}
+
+dependencies {
+    compile project(':GameOfLife-Task4:fields')
+    compile project(':GameOfLife-Task4:figures')
+    compile project(':GameOfLife-Task4:behaviour')
+}

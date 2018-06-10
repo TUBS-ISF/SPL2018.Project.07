@@ -1,0 +1,14 @@
+= SPL2018.Project.07
+
+
+== Task 4
+
+=== Black-Box Framework
+* `GameOfLife-Task4:api' enthält Die Main-Klasse, alle Interfaces und den selbst implementierten Plugin-Loader
+* `GameOfLife-Task4:figures' enthält implementierte Patterns
+    ** PluginLoader: PatternLoaderService
+* `GameOfLife-Task4:fields' enthält implementierte Felder
+    **
+* `GameOfLife-Task4:behaviour' enthält implementierte Verhaltensweisen
+    **
+* Die Jar-Files mit den Plugins können einfachkeitshalber als lokale Gradle-Dependencies eingebunden werden
