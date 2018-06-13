@@ -148,7 +148,7 @@ Choose an area of the field and save that to a file
         </rule>
         <rule>
             <disj>
-                <var>Fixed Playboard</var>
+                <var>FixedPlayboard</var>
                 <disj>
                     <var>Automatic</var>
                     <var>Overflow</var>
