@@ -9,4 +9,3 @@ include 'GameOfLife-Task1',
         'GameOfLife-Task4:behaviour',
         'GameOfLife-Task4:figures',
         'GameOfLife-Task5'
-        'GameOfLife-Task5:gameoflife'
