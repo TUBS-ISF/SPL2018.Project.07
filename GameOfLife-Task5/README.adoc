@@ -9,3 +9,4 @@
 * Mayor problems with intended feature hierarchy and FeatureHouse
     ** How do I use code used by multiple features and features used by other features?
     ** Usage of original() will be displayed in main java file
+* Constantly deletes my src/-folder

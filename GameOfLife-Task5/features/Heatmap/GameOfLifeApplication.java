@@ -1,10 +1,11 @@
-package de.tubs.gol;
-
 import de.tubs.gol.gui.GameOfLifeGuiController;
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.util.Arrays;
@@ -24,18 +25,11 @@ public class GameOfLifeApplication extends Application {
 
     @Override
     public void start(final Stage primaryStage) throws Exception {
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/de/tubs/gol/GameOfLifeGui.fxml"));
-        Parent root = fxml.load();
-        Scene scene = new Scene(root, 700, 500);
+        original();
 
-        GameOfLifeGuiController controller = fxml.getController();
-        controller.setParameters(parameters);
+        this.heatmapFlag = parameters.contai ns("heatmap");
 
-        primaryStage.setTitle("Game of Life");
-        primaryStage.setScene(scene);
-        primaryStage.setMinWidth(scene.getWidth());
-        primaryStage.setMinHeight(scene.getHeight());
-        primaryStage.show();
+        original();
     }
 
 }

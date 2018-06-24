@@ -110,32 +110,6 @@ public class GameOfLifeGuiController implements Initializable {
                 }
             });
         }
-
-        // Heatmap
-        //#if Heatmap
-        this.heatmapFlag = parameters.contains("heatmap");
-        //#endif
-        
-        // Fields
-        ObservableList<MenuItem> fields = newBtn.getItems();
-
-        //#if Fixed Playboard
-            MenuItem fixedField = new MenuItem("Fixed Field");
-            fixedField.setOnAction(event -> newFixedBoard());
-            fields.add(fixedField);
-        //#endif
-
-        //#if Overflow
-            MenuItem torusField = new MenuItem("Torus Field");
-            torusField.setOnAction(event -> newTorusBoard());
-            fields.add(torusField);
-    	//#endif
-
-        //#if Automatic
-            MenuItem endlessField = new MenuItem("Endless Field");
-            endlessField.setOnAction(event -> newEndlessBoard());
-            fields.add(endlessField);
-        //#endif
     }
 
     private void initBindings() {
@@ -469,5 +443,13 @@ public class GameOfLifeGuiController implements Initializable {
 
     public void setParameters(List<String> parameters) {
         this.parameters = parameters;
+    }
+
+    public MenuButton getNewBtn() {
+        return newBtn;
+    }
+
+    public void setHeatmapFlag(boolean heatmapFlag) {
+        this.heatmapFlag = heatmapFlag;
     }
 }
