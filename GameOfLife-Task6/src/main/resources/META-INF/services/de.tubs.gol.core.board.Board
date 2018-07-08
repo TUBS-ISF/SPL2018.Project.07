@@ -1,0 +1,3 @@
+de.tubs.gol.core.board.endless.EndlessBoard
+de.tubs.gol.core.board.fixed.FixedBoard
+de.tubs.gol.core.board.torus.TorusBoard

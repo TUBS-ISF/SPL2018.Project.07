@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<configuration>
+    <feature automatic="selected" name="Abgabe_06"/>
+    <feature automatic="selected" manual="selected" name="Base"/>
+    <feature automatic="selected" name="Rules"/>
+    <feature automatic="selected" name="Playboard"/>
+    <feature automatic="selected" manual="selected" name="PlayboardFeatures"/>
+    <feature automatic="selected" manual="selected" name="PlayboardType"/>
+    <feature automatic="selected" manual="selected" name="Expansion"/>
+    <feature automatic="selected" manual="selected" name="Manual"/>
+    <feature manual="selected" name="Direction"/>
+    <feature manual="selected" name="Automatic"/>
+    <feature automatic="selected" manual="selected" name="FieldShape"/>
+    <feature manual="selected" name="Hexagonal"/>
+    <feature automatic="selected" manual="selected" name="PlayboardBehaviour"/>
+    <feature manual="selected" name="CustomPlayboards"/>
+    <feature manual="selected" name="Heatmap"/>
+    <feature manual="selected" name="LifeBehaviour"/>
+    <feature automatic="unselected" name="Overflow"/>
+    <feature manual="selected" name="FixedPlayboard"/>
+    <feature automatic="selected" name="Play"/>
+    <feature automatic="selected" manual="selected" name="Playing"/>
+    <feature manual="selected" name="Pausing"/>
+    <feature manual="selected" name="Iterations"/>
+    <feature manual="selected" name="Speed"/>
+    <feature automatic="selected" manual="selected" name="Editing"/>
+    <feature manual="selected" name="OnTheFlyEditing"/>
+    <feature automatic="selected" name="DrawCells"/>
+</configuration>
