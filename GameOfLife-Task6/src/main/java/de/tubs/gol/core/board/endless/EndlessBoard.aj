@@ -1,4 +1,4 @@
-package de.tubs.gol.core.board.torus;
+package de.tubs.gol.core.board.endless;
 
 import de.tubs.gol.core.Cell;
 import de.tubs.gol.core.Status;
@@ -7,24 +7,24 @@ import de.tubs.gol.core.rule.StatusCalculator;
 
 import java.util.*;
 
+import static de.tubs.gol.core.Status.*;
+
 /**
  * Created by Tino on 17.01.2016.
  */
-public class TorusBoard implements Board {
+public aspect EndlessBoard implements Board {
 
-    public static final int NEIGHBOUR_COUNT = 8;
+    private static final int NEIGHBOUR_COUNT = 8;
 
-    protected final StatusCalculator calculator = new StatusCalculator();
+    private final StatusCalculator calculator = new StatusCalculator();
 
-    protected final List<Cell> livingCells = new ArrayList<>();
-    protected final List<Cell> newLivingCells = new ArrayList<>();
+    private final List<Cell> livingCells = new ArrayList<>();
+    private final List<Cell> newLivingCells = new ArrayList<>();
 
-    protected final static long START_GENERATION = 1;
-    protected long currentGeneration;
-    private int width;
-    private int height;
+    private final static long START_GENERATION = 1;
+    private long currentGeneration;
 
-    public TorusBoard() {
+    public EndlessBoard() {
         this.currentGeneration = START_GENERATION;
     }
 
@@ -48,7 +48,15 @@ public class TorusBoard implements Board {
     }
 
     public boolean isBounded() {
-        return true;
+        return false;
+    }
+
+    public void setWidth(int width) {
+
+    }
+
+    public void setHeight(int height) {
+
     }
 
     public Board clear() {
@@ -69,16 +77,6 @@ public class TorusBoard implements Board {
         return currentGeneration;
     }
 
-    public TorusBoard(final int width, final int height) {
-        this.width = width;
-        this.height = height;
-    }
-
-    public TorusBoard(final long initialGeneration, final int width, final int height) {
-        this(width, height);
-        this.currentGeneration = (initialGeneration < START_GENERATION ? START_GENERATION : initialGeneration);
-    }
-
     public void updateLivingCells() {
         livingCells.clear();
         livingCells.addAll(newLivingCells);
@@ -87,8 +85,8 @@ public class TorusBoard implements Board {
 
     public void nextRound() {
 
-        calculateNextStatusOfCells(Status.ALIVE, livingCells);
-        calculateNextStatusOfCells(Status.DEAD, determineDeadNeighbourCells());
+        calculateNextStatusOfCells(ALIVE, livingCells);
+        calculateNextStatusOfCells(DEAD, determineDeadNeighbourCells());
 
         updateLivingCells();
 
@@ -141,46 +139,10 @@ public class TorusBoard implements Board {
                     continue;
                 }
 
-                neighbours.add(new Cell(translateX(x), translateY(y)));
+                neighbours.add(new Cell(x, y));
             }
         }
 
         return neighbours;
-    }
-
-    public int translateX(final int x) {
-        if (x < 0) {
-            return getWidth() - 1;
-        }
-        if (x >= getWidth()) {
-            return 0;
-        }
-        return x;
-    }
-
-    public int translateY(final int y) {
-        if (y < 0) {
-            return getHeight() - 1;
-        }
-        if (y >= getHeight()) {
-            return 0;
-        }
-        return y;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
     }
 }

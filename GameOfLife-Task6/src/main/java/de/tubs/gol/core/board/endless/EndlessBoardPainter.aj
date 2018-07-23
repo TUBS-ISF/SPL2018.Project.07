@@ -14,7 +14,7 @@ import java.util.Optional;
 /**
  * Created by Tino on 28.01.2016.
  */
-public class EndlessBoardPainter implements BoardPainter {
+public aspect EndlessBoardPainter implements BoardPainter {
 
     private static final int CELL_WIDTH_THRESHOLD = 2;
 
@@ -26,12 +26,6 @@ public class EndlessBoardPainter implements BoardPainter {
 
     private final ViewPort viewPort;
     private boolean heatmapFlag;
-
-    public EndlessBoardPainter(final EndlessBoard board, final double canvasWidth, final double canvasHeight, boolean heatmapFlag) {
-        this.board = board;
-        this.viewPort = new ViewPort(canvasWidth, canvasHeight);
-        this.heatmapFlag = heatmapFlag;
-    }
 
     @Override
     public void paint(final GraphicsContext gc) {

@@ -1,4 +1,4 @@
-package de.tubs.gol.core.board.fixed;
+package de.tubs.gol.core.board.torus;
 
 import de.tubs.gol.core.Cell;
 import de.tubs.gol.core.Status;
@@ -10,20 +10,23 @@ import java.util.*;
 /**
  * Created by Tino on 17.01.2016.
  */
-public class FixedBoard implements Board {
+public aspect TorusBoard implements Board {
 
-    private static final int NEIGHBOUR_COUNT = 8;
+    public static final int NEIGHBOUR_COUNT = 8;
 
-    private final StatusCalculator calculator = new StatusCalculator();
+    protected final StatusCalculator calculator = new StatusCalculator();
 
-    private final List<Cell> livingCells = new ArrayList<>();
-    private final List<Cell> newLivingCells = new ArrayList<>();
+    protected final List<Cell> livingCells = new ArrayList<>();
+    protected final List<Cell> newLivingCells = new ArrayList<>();
 
-    private final static long START_GENERATION = 1;
-    private int height;
+    protected final static long START_GENERATION = 1;
+    protected long currentGeneration;
     private int width;
-    private long currentGeneration;
+    private int height;
 
+    public TorusBoard() {
+        this.currentGeneration = START_GENERATION;
+    }
 
     public boolean cellIsAlive(final Cell cell) {
         return livingCells.contains(cell);
@@ -48,14 +51,6 @@ public class FixedBoard implements Board {
         return true;
     }
 
-    public void setWidth(int width) {
-        this.width = width;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
     public Board clear() {
         livingCells.clear();
         currentGeneration = START_GENERATION;
@@ -74,15 +69,12 @@ public class FixedBoard implements Board {
         return currentGeneration;
     }
 
-    public FixedBoard() {
-    }
-
-    public FixedBoard(final int width, final int height) {
+    public TorusBoard(final int width, final int height) {
         this.width = width;
         this.height = height;
     }
 
-    public FixedBoard(final long initialGeneration, final int width, final int height) {
+    public TorusBoard(final long initialGeneration, final int width, final int height) {
         this(width, height);
         this.currentGeneration = (initialGeneration < START_GENERATION ? START_GENERATION : initialGeneration);
     }
@@ -145,21 +137,35 @@ public class FixedBoard implements Board {
 
         for (int x = cell.getX() - 1; x <= cell.getX() + 1; x++) {
             for (int y = cell.getY() - 1; y <= cell.getY() + 1; y++) {
-                if (!pointIsInBound(x, y)
-                        || (x == cell.getX() && y == cell.getY())) {
+                if (x == cell.getX() && y == cell.getY()) {
                     continue;
                 }
 
-                neighbours.add(new Cell(x, y));
+                neighbours.add(new Cell(translateX(x), translateY(y)));
             }
         }
 
         return neighbours;
     }
 
-    public boolean pointIsInBound(final int x, final int y) {
-        return x >= 0 && x < getWidth()
-                && y >= 0 && y < getHeight();
+    public int translateX(final int x) {
+        if (x < 0) {
+            return getWidth() - 1;
+        }
+        if (x >= getWidth()) {
+            return 0;
+        }
+        return x;
+    }
+
+    public int translateY(final int y) {
+        if (y < 0) {
+            return getHeight() - 1;
+        }
+        if (y >= getHeight()) {
+            return 0;
+        }
+        return y;
     }
 
     public int getHeight() {
@@ -168,5 +174,13 @@ public class FixedBoard implements Board {
 
     public int getWidth() {
         return width;
+    }
+
+    public void setWidth(int width) {
+        this.width = width;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 }

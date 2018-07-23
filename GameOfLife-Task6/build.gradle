@@ -17,6 +17,13 @@ sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 
+configurations {
+    ajc
+    aspects
+    ajInpath
+}
+
+
 jar {
     manifest {
         attributes 'Main-Class': 'de.tubs.gol.GameOfLifeApplication'
@@ -24,8 +31,35 @@ jar {
 }
 
 
-dependencies {
-    compile group: 'org.aspectj', name: 'aspectjrt', version: aspectjVersion
+compileJava.deleteAllActions()
+compileJava << {
+    ant.taskdef(
+            resource: 'org/aspectj/tools/ant/taskdefs/aspectjTaskdefs.properties',
+            classpath: configurations.ajc.asPath)
+    ant.iajc(
+            source: sourceCompatibility,
+            target: targetCompatibility,
+            destDir: sourceSets.main.output.classesDir.absolutePath,
+            fork: 'true',
+            X: 'noInline',
+            aspectPath: configurations.aspects.asPath,
+            inpath: configurations.ajInpath.asPath,
+            sourceRootCopyFilter: '**/*.java,**/*.aj',
+            classpath: configurations.compile.asPath) {
 
-    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.2.0'
+        sourceroots {
+            sourceSets.main.java.srcDirs.each { dir ->
+                pathelement(location: dir.absolutePath)
+            }
+        }
+    }
 }
+
+
+dependencies {
+    ajc "org.aspectj:aspectjtools:$aspectjVersion"
+    compile "org.aspectj:aspectjrt:$aspectjVersion"
+
+    testCompile "org.junit.jupiter:junit-jupiter-api:5.2.0"
+}
+

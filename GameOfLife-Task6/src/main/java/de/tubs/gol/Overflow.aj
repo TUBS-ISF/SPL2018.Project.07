@@ -16,14 +16,14 @@ import java.util.List;
 /**
  * Created by Tino on 21.01.2016.
  */
-public aspect GameOfLifeApplicationOverflow {
+public aspect Overflow {
 
     declare precedence: GameOfLifeApplicationFixedPlayboard;
 
-    after(): execution(void GameOfLifeApplication.start()) {
+    before(): execution(void de.tubs.gol.GameOfLifeApplication.start()) {
         MenuItem torusField = new MenuItem("Torus Field");
-        torusField.setOnAction(event -> newTorusBoard());
-        fields.add(torusField);
+        torusField.setOnAction(event -> GameOfLifeGuiController.newTorusBoard());
+        GameOfLifeApplication.addFields(torusField);
     }
 
 }

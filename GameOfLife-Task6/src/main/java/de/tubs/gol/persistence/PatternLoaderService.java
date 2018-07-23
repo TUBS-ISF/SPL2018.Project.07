@@ -15,31 +15,13 @@ import java.util.Objects;
  */
 public class PatternLoaderService {
 
-    private final static String RESOURCEFOLDER = "/contextmenu";
+    public static List<ResourceFigure> figures = new ArrayList<>();;
 
     public List<ResourceFigure> loadBuildInFigures() {
-        final List<ResourceFigure> figures = new ArrayList<>();
-
-        URL resource = getClass().getResource(RESOURCEFOLDER);
-        File folder = null;
-
-        try {
-            folder = new File(resource.toURI());
-
-            if (folder.exists()) {
-                for (final File fileEntry : Objects.requireNonNull(folder.listFiles())) {
-//                    System.out.println(fileEntry.getName());
-                    figures.add(loadResourceFigure(fileEntry));
-                }
-            }
-        } catch (URISyntaxException | IOException e) {
-            e.printStackTrace();
-        }
-
         return figures;
     }
 
-    private ResourceFigure loadResourceFigure(final File resource) throws IOException {
+    public static ResourceFigure loadResourceFigure(final File resource) throws IOException {
         final ResourceFigure figure = new ResourceFigure(resource.getName().substring(0, resource.getName().indexOf(".")));
 
         InputStream preis = new FileInputStream(resource);

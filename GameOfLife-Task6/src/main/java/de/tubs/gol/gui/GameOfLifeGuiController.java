@@ -26,6 +26,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.ScrollEvent;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 
@@ -42,6 +43,9 @@ import java.util.Set;
 public class GameOfLifeGuiController implements Initializable {
 
     private final static int NAVIGATION_STEP_SIZE = 5;
+
+    @FXML
+    public GridPane gridPane;
 
     @FXML
     private Button openBtn;
@@ -69,8 +73,6 @@ public class GameOfLifeGuiController implements Initializable {
     @FXML
     private Label generationLabel;
     @FXML
-    private Slider durationSlider;
-    @FXML
     private Button leftBtn;
     @FXML
     private Button rightBtn;
@@ -94,6 +96,7 @@ public class GameOfLifeGuiController implements Initializable {
     private List<String> parameters;
     private boolean dragBool;
     private boolean heatmapFlag;
+    private Color col;
 
     private void initContextMenu() {
         final List<ResourceFigure> resourceFigures = resourceLoaderService.loadBuildInFigures();
@@ -125,7 +128,6 @@ public class GameOfLifeGuiController implements Initializable {
     }
 
     private void initBindings() {
-        durationSlider.valueProperty().bindBidirectional(timer.stepDurationProperty());
 
         canvas.widthProperty().bind(canvasHolder.widthProperty());
         canvas.heightProperty().bind(canvasHolder.heightProperty());
@@ -133,24 +135,7 @@ public class GameOfLifeGuiController implements Initializable {
         canvas.heightProperty().addListener(event -> paint());
     }
 
-    private void initListener() {
-        canvas.setOnMouseClicked(event2 -> onCellClicked(event2, false));
-        canvas.setOnMouseReleased(event -> {
-            dragBool = false;
-//            System.out.println("RELEASE");
-        });
-        canvas.setOnMousePressed(event -> {
-            Optional<Cell> cellOnBoard = getCellOnBoard(event);
-            if (cellOnBoard.isPresent()) {
-                dragBool = board.cellIsAlive(cellOnBoard.get());
-//                System.out.println("ENTERED ON: " + dragBool);
-            }
-        });
-        canvas.setOnMouseDragged(event1 -> {
-            if (event1.isPrimaryButtonDown()) {
-                onCellClicked(event1, true);
-            }
-        });
+    public void initListener() {
 
         canvas.setOnScroll((ScrollEvent event) -> {
             if (!painterIsAvailable()) {
@@ -228,12 +213,7 @@ public class GameOfLifeGuiController implements Initializable {
     public void paint() {
         final GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        Color col;
-        if (!heatmapFlag) {
-            col = Color.WHITE;
-        } else {
-            col = Color.WHITE.deriveColor(0, 0, 100, 0.1);
-        }
+        col = Color.WHITE;
 
         gc.setFill(col);
         gc.fillRect(0, 0, canvas.getWidth(), canvas.getHeight());

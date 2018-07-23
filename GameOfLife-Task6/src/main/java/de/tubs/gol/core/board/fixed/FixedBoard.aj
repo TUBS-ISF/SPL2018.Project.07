@@ -1,4 +1,4 @@
-package de.tubs.gol.core.board.endless;
+package de.tubs.gol.core.board.fixed;
 
 import de.tubs.gol.core.Cell;
 import de.tubs.gol.core.Status;
@@ -7,12 +7,10 @@ import de.tubs.gol.core.rule.StatusCalculator;
 
 import java.util.*;
 
-import static de.tubs.gol.core.Status.*;
-
 /**
  * Created by Tino on 17.01.2016.
  */
-public class EndlessBoard implements Board {
+public aspect FixedBoard implements Board {
 
     private static final int NEIGHBOUR_COUNT = 8;
 
@@ -22,15 +20,10 @@ public class EndlessBoard implements Board {
     private final List<Cell> newLivingCells = new ArrayList<>();
 
     private final static long START_GENERATION = 1;
+    private int height;
+    private int width;
     private long currentGeneration;
 
-    public EndlessBoard(final long initialGeneration) {
-        this.currentGeneration = (initialGeneration < START_GENERATION ? START_GENERATION : initialGeneration);
-    }
-
-    public EndlessBoard() {
-        this.currentGeneration = START_GENERATION;
-    }
 
     public boolean cellIsAlive(final Cell cell) {
         return livingCells.contains(cell);
@@ -52,15 +45,15 @@ public class EndlessBoard implements Board {
     }
 
     public boolean isBounded() {
-        return false;
+        return true;
     }
 
     public void setWidth(int width) {
-
+        this.width = width;
     }
 
     public void setHeight(int height) {
-
+        this.height = height;
     }
 
     public Board clear() {
@@ -81,6 +74,19 @@ public class EndlessBoard implements Board {
         return currentGeneration;
     }
 
+    public FixedBoard() {
+    }
+
+    public FixedBoard(final int width, final int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public FixedBoard(final long initialGeneration, final int width, final int height) {
+        this(width, height);
+        this.currentGeneration = (initialGeneration < START_GENERATION ? START_GENERATION : initialGeneration);
+    }
+
     public void updateLivingCells() {
         livingCells.clear();
         livingCells.addAll(newLivingCells);
@@ -89,8 +95,8 @@ public class EndlessBoard implements Board {
 
     public void nextRound() {
 
-        calculateNextStatusOfCells(ALIVE, livingCells);
-        calculateNextStatusOfCells(DEAD, determineDeadNeighbourCells());
+        calculateNextStatusOfCells(Status.ALIVE, livingCells);
+        calculateNextStatusOfCells(Status.DEAD, determineDeadNeighbourCells());
 
         updateLivingCells();
 
@@ -139,7 +145,8 @@ public class EndlessBoard implements Board {
 
         for (int x = cell.getX() - 1; x <= cell.getX() + 1; x++) {
             for (int y = cell.getY() - 1; y <= cell.getY() + 1; y++) {
-                if (x == cell.getX() && y == cell.getY()) {
+                if (!pointIsInBound(x, y)
+                        || (x == cell.getX() && y == cell.getY())) {
                     continue;
                 }
 
@@ -148,5 +155,18 @@ public class EndlessBoard implements Board {
         }
 
         return neighbours;
+    }
+
+    public boolean pointIsInBound(final int x, final int y) {
+        return x >= 0 && x < getWidth()
+                && y >= 0 && y < getHeight();
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public int getWidth() {
+        return width;
     }
 }

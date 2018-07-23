@@ -5,4 +5,41 @@
 
 === Aspektorientierte Programmierung
 
+* Implemented Features
+    ** Manditory
+        *** Rules
+        *** Playboard
+        *** Base
+        *** Play
+        *** Pause
+    ** Optional
+        *** Automatic
+        *** Heatmap
+        *** Overflow
+        *** FixedPlayboard
+        *** Speed
+        *** OnTheFlyEditing
+        *** DrawCells
+        *** FromFiles
+        *** StillLifes
+        *** Oscillerators
+        *** Spaceships
+        *** Guns
+        *** Puffers
+
 * AspectJ
+    ** Welche Fehler haben Sie beim Testen gefunden?
+        *** Wie auch bei Feature-Orientierter-Programmierung hatte ich das Problem, dass die Feature-IDE Integration nicht funktioniert hat
+        *** Daher habe ich IntelliJ und Gradle benutzt, um das Projekt zu bauen und lauffähig zu machen
+        *** Mit FeatureIDE konnte ich aber die Features an und aus schalten
+
+    ** Welche Rolle spielt aus Ihrer Sicht die Werkzeugunterstutzung bei aspekt-orientierter Programmierung?
+        *** Eine relativ große Rolle, da man sonst nur sehr schwer die Übersicht behalten kann und das Kompilieren sehr aufwendig wird
+
+    ** Was fur Herausforderungen waren zu erwarten, wenn man die Produktlinie stark erweitert?
+        *** Es kann schnell unübersichtlich werden und es ist nicht so einfach klar, welche Features, wie, wo interagieren
+
+    ** Welche der funf Programmiertechniken hat Ihnen am besten gefallen und warum?
+        *** Unter den verschiedenen Programmiertechniken haben mir die Plugins/das Blackbox-Framework am meisten gefallen
+        *** Plugins sind am ehesten in der Industrie einsetzbar, sie sind stabil, skalierbar und unterstützen eine gute Software-Architektur
+        *** Sie kosten relativ viel Zeit, aber für den Bau stabiler, komplexer Software sind sie gut geeignet

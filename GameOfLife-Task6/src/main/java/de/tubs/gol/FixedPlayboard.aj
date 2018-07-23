@@ -16,10 +16,12 @@ import java.util.List;
 /**
  * Created by Tino on 21.01.2016.
  */
-public class GameOfLifeApplicationHeatmap {
+public aspect FixedPlayboard {
 
-    after(): execution(void GameOfLifeApplication.start()) {
-        this.heatmapFlag = parameters.contai ns("heatmap");
+    before(): execution(void de.tubs.gol.GameOfLifeApplication.start()) {
+        MenuItem fixedField = new MenuItem("Fixed Field");
+        fixedField.setOnAction(event -> GameOfLifeGuiController.newFixedBoard());
+        GameOfLifeApplication.addFields(fixedField);
     }
 
 }

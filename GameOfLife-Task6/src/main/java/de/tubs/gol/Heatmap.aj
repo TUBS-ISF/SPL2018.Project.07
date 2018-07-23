@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.util.Arrays;
@@ -16,12 +17,15 @@ import java.util.List;
 /**
  * Created by Tino on 21.01.2016.
  */
-public class GameOfLifeApplicationAutomatic extends Application {
+public aspect Heatmap {
 
-    after(): execution(void GameOfLifeApplication.start()) {
-        MenuItem endlessField = new MenuItem("Endless Field");
-        endlessField.setOnAction(event -> newEndlessBoard());
-        fields.add(endlessField);
+    before(): execution(void de.tubs.gol.GameOfLifeApplication.start()) {
+        GameOfLifeApplication.addParameter("heatmap");
     }
+
+    before(): execution(void de.tubs.gol.gui.GameOfLifeGuiController.paint() {
+        GameOfLifeGuiController.col = Color.WHITE.deriveColor(0, 0, 100, 0.1);
+    }
+
 
 }

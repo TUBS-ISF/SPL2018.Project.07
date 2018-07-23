@@ -16,12 +16,12 @@ import java.util.List;
 /**
  * Created by Tino on 21.01.2016.
  */
-public class GameOfLifeApplicationFixedPlayboard {
+public aspect Automatic {
 
-    after(): execution(void GameOfLifeApplication.start()) {
-        MenuItem fixedField = new MenuItem("Fixed Field");
-        fixedField.setOnAction(event -> newFixedBoard());
-        fields.add(fixedField);
+    before(): execution(void de.tubs.gol.GameOfLifeApplication.start()) {
+        MenuItem endlessField = new MenuItem("Endless Field");
+        endlessField.setOnAction(event -> GameOfLifeGuiController.newEndlessBoard());
+        GameOfLifeApplication.addFields(endlessField);
     }
 
 }
